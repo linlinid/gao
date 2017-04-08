@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新闻列表</title>
+</head>
+<body>
+<table border="1" width="600" align="center" cellspacing="0" cellpadding="2" rules="all">
+    <tr>
+        <td>ID</td>
+        <td>标题</td>
+        <td>发布时间</td>
+        <td>点击量</td>
+        <td>操作</td>
+    </tr>
+    {foreach $a as $value}
+    <tr>
+        <td>{$value.id}</td>
+        <td>{$value.title}</td>
+        <td>{$value.ptime}</td>
+        <td>{$value.hits}</td>
+        <td>
+            <a href="newsController.php?a=delete&id={$value.id}">删除</a>
+        </td>
+    </tr>
+    {/foreach}
+</table>
+</body>
+</html>
